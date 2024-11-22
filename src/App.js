@@ -1,23 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import Form from './components/ejercicio21_1/Form';
+import MyLabel from './components/ejercicio21_1/label/Label';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <MyLabel tag="h1" text="Formulario de registro"/>
+      <Form/>
+      <Footer/>
     </div>
   );
 }
