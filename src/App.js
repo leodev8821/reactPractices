@@ -1,19 +1,27 @@
-import './App.css';
-import Form from './components/ejercicio21_1/Form';
-import MyLabel from './components/ejercicio21_1/label/Label';
-import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
-import Clock from './components/clase 22_4/Clock';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from './components/clase24_2_Router/pages/Home';
+import About from './components/clase24_2_Router/pages/About';
+import ProductList from "./components/clase24_2_Router/pages/ProductList";
+import NotFound from './components/clase24_2_Router/pages/NotFound';
+import NavBar from './components/clase24_2_Router/components/NavBar';
+import Footer from './components/clase24_2_Router/components/Footer';
+import Header from './components/clase24_2_Router/components/Header'
+
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <MyLabel tag="h1" text="Formulario de registro"/>
-      <Form/>
-      <Clock ciudad="Madrid"/>
-      <Footer/>
-    </div>
+    <Router>
+      <Header />
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/products" element={<ProductList />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 
